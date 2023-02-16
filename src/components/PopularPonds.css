@@ -1,0 +1,23 @@
+.popular-ponds {
+  display: none;
+}
+
+@media only screen and (min-width: 992px) {
+  .popular-ponds {
+    display: block;
+    width: calc(20% - 10px);
+    margin-left: 10px;
+    margin-top: 40px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .popular-ponds {
+    width: calc(40% - 10px);
+  }
+}
+
+.popular-ponds .card {
+  width: 100%;
+  min-height: 200px;
+}

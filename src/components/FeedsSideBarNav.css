@@ -4,5 +4,9 @@
 
 .feeds-side-bar-nav a {
   display: block;
-  color: black;
+  color: white;
+}
+
+.feeds-side-bar-nav a:hover {
+  color: #D97;
 }
