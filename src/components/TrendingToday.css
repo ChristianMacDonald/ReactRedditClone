@@ -1,0 +1,13 @@
+.story-list.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #39C;
+}
+
+@media only screen and (min-width: 600px) {
+  .story-list.card {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}

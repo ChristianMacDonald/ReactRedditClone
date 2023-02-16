@@ -1,0 +1,12 @@
+.main {
+  min-height: 10000px;
+  margin-top: 50px;
+  padding: 5px 20px;
+}
+
+@media only screen and (min-width: 992px) {
+  .main {
+    margin-left: 20vw;
+    padding: 10px 40px;
+  }
+}
