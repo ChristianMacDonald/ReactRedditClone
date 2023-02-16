@@ -1,0 +1,12 @@
+.feeds-side-bar-nav {
+  margin: 30px;
+}
+
+.feeds-side-bar-nav a {
+  display: block;
+  color: white;
+}
+
+.feeds-side-bar-nav a:hover {
+  color: #D97;
+}

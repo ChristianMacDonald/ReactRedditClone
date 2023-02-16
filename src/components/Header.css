@@ -1,0 +1,62 @@
+.header {
+  height: 50px;
+  max-height: 50px;
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  background-color: #0D4;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.app-name {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 5px;
+  color: white;
+}
+
+.header input {
+  margin-top: 5px;
+  width: 30%;
+  padding: 5px 10px;
+  border-radius: 25px;
+}
+
+.feeds-dropdown-menu {
+  margin-top: 10px;
+}
+
+.feeds-dropdown-content {
+  display: none;
+}
+
+.feeds-dropdown-content a {
+  border: 1px solid black;
+  background: gray;
+}
+
+.show {
+  display: flex;
+  flex-direction: column;
+}
+
+@media only screen and (min-width: 992px) {
+  .header {
+    padding: 0 30px;
+  }
+
+  .feeds-dropdown-menu {
+    display: none;
+  }
+}
+
+.login-button {
+  margin-top: 5px;
+  padding: 5px;
+  border-radius: 15px;
+  background: #2DE;
+  color: white;
+}

@@ -1,0 +1,16 @@
+.side-bar {
+  display: none;
+  background-color: #679;
+  z-index: 1;
+}
+
+@media only screen and (min-width: 992px) {
+  .side-bar {
+    display: block;
+    position: fixed;
+    top: 50px;
+    left: 0;
+    bottom: 0;
+    width: 20vw;
+  }
+}

@@ -1,0 +1,49 @@
+.trending-story {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+@media only screen and (min-width: 600px) {
+  .trending-story {
+    width: 50%;
+  }
+}
+ 
+@media only screen and (min-width: 768px) {
+  .trending-story {
+    width: 25%;
+  }
+}
+
+
+.trending-story:hover {
+  opacity: 0.75;
+}
+
+.trending-story .card {
+  background-color: gray;
+  min-height: 200px;
+  padding: 20px;
+  justify-content: end;
+  color: white;
+}
+
+.trending-story .card-title,
+.trending-story .card-subtitle,
+.trending-story .card-text {
+  text-shadow:
+  -1px -1px 0 #000,
+  -1px 1px 0 #000,
+  1px 1px 0 #000,
+  1px -1px 0 #000;
+}
+
+.trending-story .card-subtitle {
+  font-size: small;
+}
+
+.trending-story .card-text {
+  font-size: small;
+  margin-top: 5px;
+}
