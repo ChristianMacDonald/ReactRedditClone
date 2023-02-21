@@ -14,13 +14,13 @@ function Header(props) {
       <h1 className="app-name">Ribbit</h1>
       <div className="feeds-dropdown-menu">
         <button onClick={toggleFeedsDropdown}>Feeds</button>
-        <div className={classNames("feeds-dropdown-content", { "show": showFeedsDropdown })}>
+        <nav className={classNames("feeds-dropdown-content", { "show": showFeedsDropdown })}>
           <a>Main</a>
           <a>Main</a>
           <a>Main</a>
           <a>Main</a>
           <a>Main</a>
-        </div>
+        </nav>
       </div>
       <input type="text" placeholder="Search..."/>
       <button className="login-button">Login</button>

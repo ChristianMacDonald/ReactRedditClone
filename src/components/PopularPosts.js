@@ -18,6 +18,16 @@ function PopularPosts(props) {
       title: 'to get one car ahead',
       location: 'p/therewasanattempt',
       author: 'BIGRIG_88'
+    },
+    {
+      title: 'What is a good song that\'s over 6 minutes long?',
+      location: 'p/AskRibbit',
+      author: 'Incendiary_cucumbers'
+    },
+    {
+      title: 'Chats between me and my partner is this normal?',
+      location: 'p/mildlyinfuriating',
+      author: 'Validity_16'
     }
   ];
 

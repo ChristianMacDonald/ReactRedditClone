@@ -11,7 +11,13 @@
   margin: 0;
 }
 
-.post .card header {
+.post .card {
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-between;
+}
+
+.post .card h3 {
+  width: 100%;
 }
