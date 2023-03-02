@@ -1,5 +1,8 @@
 import { useState } from "react";
 import classNames from "classnames";
+
+import { LoginModal } from '.';
+
 import "./Header.css";
 
 function Header(props) {
@@ -8,6 +11,12 @@ function Header(props) {
   let toggleFeedsDropdown = () => {
     setShowFeedsDropdown(!showFeedsDropdown);
   };
+
+  let [showLoginModal, setShowLoginModal] = useState(false);
+
+  let toggle = () => {
+    setShowLoginModal(!showLoginModal);
+  }
 
   return (
     <header className="header">
@@ -23,7 +32,8 @@ function Header(props) {
         </nav>
       </div>
       <input type="text" placeholder="Search..."/>
-      <button className="login-button">Login</button>
+      <button className="login-button" onClick={toggle}>Login</button>
+      {showLoginModal ? <LoginModal toggle={toggle}/> : null}
     </header>
   );
 }

@@ -1,5 +1,7 @@
 import FeedsSideBarNav from './FeedsSideBarNav';
 import Header from './Header';
+import LoginForm from './LoginForm';
+import LoginModal from './LoginModal';
 import Main from './Main';
 import PopularPonds from './PopularPonds';
 import PopularPosts from './PopularPosts';
@@ -11,7 +13,9 @@ import TrendingToday from './TrendingToday';
 
 export {
   FeedsSideBarNav,
-  Header, 
+  Header,
+  LoginForm,
+  LoginModal,
   Main,
   PopularPonds,
   PopularPosts,

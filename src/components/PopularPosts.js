@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Post } from '.';
 
 import './PopularPosts.css';
