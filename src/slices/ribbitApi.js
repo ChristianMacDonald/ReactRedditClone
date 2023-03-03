@@ -10,10 +10,17 @@ const ribbitApi = createApi({
         method: 'POST',
         body: user
       })
+    }),
+    register: builder.mutation({
+      query: user => ({
+        url: 'auth/register',
+        method: 'POST',
+        body: user
+      })
     })
   })
 });
 
 export default ribbitApi;
 
-export const { useLoginMutation } = ribbitApi;
+export const { useLoginMutation, useRegisterMutation } = ribbitApi;
