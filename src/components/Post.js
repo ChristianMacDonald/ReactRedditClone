@@ -14,8 +14,8 @@ function Post(props) {
     <section className="post-container">
       <article className="post" onClick={toggleModal}>
         <Card>
-          <span className="location">{props.post.location}</span>
-          <span className="author">{`u/${props.post.author}`}</span>
+          <span className="location">{`p/${props.post.pond_name}`}</span>
+          <span className="author">{`u/${props.post.author_username}`}</span>
           <h3 className="title">{props.post.title}</h3>
         </Card>
       </article>

@@ -2,7 +2,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 const ribbitApi = createApi({
   reducerPath: 'ribbitApi',
-  baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:4000/api/' }),
+  baseQuery: fetchBaseQuery({ baseUrl: 'http://10.0.0.105:4000/api/' }),
   endpoints: builder => ({
     login: builder.mutation({
       query: user => ({
@@ -17,10 +17,23 @@ const ribbitApi = createApi({
         method: 'POST',
         body: user
       })
+    }),
+    getTokenOwner: builder.query({
+      query: token => ({
+        url: 'auth/token-owner',
+        headers: {
+          token: token
+        }
+      })
+    }),
+    getPosts: builder.query({
+      query: () => ({
+        url: 'posts'
+      })
     })
   })
 });
 
 export default ribbitApi;
 
-export const { useLoginMutation, useRegisterMutation } = ribbitApi;
+export const { useLoginMutation, useRegisterMutation, useLazyGetTokenOwnerQuery, useLazyGetPostsQuery } = ribbitApi;

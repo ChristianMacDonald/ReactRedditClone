@@ -1,23 +1,26 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Button, Card } from 'reactstrap';
 
-import { LoginForm, RegisterForm } from '.';
+import { FormSwitcher, UserProfile } from '.';
+import { useLazyGetTokenOwnerQuery } from '../slices/ribbitApi';
 
 import './LoginModal.css';
 
 function LoginModal(props) {
-  let [showLoginForm, setShowLoginForm] = useState(true);
-  
-  let toggle = () => {
-    setShowLoginForm(!showLoginForm);
+  let showFormSwitcher = localStorage.getItem('token') === null;
+
+  let signOut = () => {
+    localStorage.removeItem('token');
+    props.toggle();
   }
 
   return (
     <div className="login-modal">
       <Card>
         <Button onClick={props.toggle}>Close X</Button>
-        {showLoginForm ? <Button onClick={toggle}>Register</Button> : <Button onClick={toggle}>Login</Button>}
-        {showLoginForm ? <LoginForm toggle={props.toggle}/> : <RegisterForm toggle={props.toggle}/>}
+        {showFormSwitcher ? <FormSwitcher toggle={props.toggle}/> : null}
+        {!showFormSwitcher ? <UserProfile/> : null}
+        {!showFormSwitcher ? <Button onClick={signOut}>Sign Out</Button> : null}
       </Card>
     </div>
   );

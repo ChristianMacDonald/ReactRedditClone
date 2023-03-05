@@ -1,4 +1,5 @@
 import FeedsSideBarNav from './FeedsSideBarNav';
+import FormSwitcher from './FormSwitcher';
 import Header from './Header';
 import LoginForm from './LoginForm';
 import LoginModal from './LoginModal';
@@ -11,9 +12,11 @@ import RegisterForm from './RegisterForm';
 import SideBar from './SideBar';
 import TrendingStory from './TrendingStory';
 import TrendingToday from './TrendingToday';
+import UserProfile from './UserProfile';
 
 export {
   FeedsSideBarNav,
+  FormSwitcher,
   Header,
   LoginForm,
   LoginModal,
@@ -25,5 +28,6 @@ export {
   RegisterForm,
   SideBar,
   TrendingStory,
-  TrendingToday
+  TrendingToday,
+  UserProfile
 };
