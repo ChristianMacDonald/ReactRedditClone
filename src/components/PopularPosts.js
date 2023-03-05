@@ -1,30 +1,31 @@
+import { useEffect } from 'react';
+import { Spinner } from 'reactstrap';
 import { Post } from '.';
+import { useLazyGetPostsQuery } from '../slices/ribbitApi';
 
 import './PopularPosts.css';
 
 function PopularPosts(props) {
-  let posts = [
-    {
-      title:'Australian tried hiding guns in secret bunker',
-      location: 'p/interestingasfuck',
-      author: 'c0q0'
-    },
-    {
-      title: 'She asked her friends what it\'s like having siblings, and they gave her a crash course.',
-      location: 'p/MadeMeSmile',
-      author: 'mindyour'
-    },
-    {
-      title: 'to get one car ahead',
-      location: 'p/therewasanattempt',
-      author: 'BIGRIG_88'
-    }
-  ];
+  let [
+    triggerGetPostsQuery,
+    getPostsState
+  ] = useLazyGetPostsQuery();
+
+  useEffect(() => {
+    triggerGetPostsQuery();
+  }, []);
+
+  console.log(getPostsState);
 
   return (
     <section className="popular-posts">
       <h2>Popular Posts:</h2>
-      {posts.map((post, i) => <Post post={post} key={i}/>)}
+      {getPostsState.isLoading ? <Spinner>Loading...</Spinner> : null}
+      {
+        getPostsState.isSuccess ? (
+          getPostsState.data.map((post, i) => <Post post={post} key={i}/>)
+        ) : null
+      }
     </section>
   );
 }
