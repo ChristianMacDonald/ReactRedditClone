@@ -14,8 +14,14 @@
 
 .app-name {
   font-family: Arial, Helvetica, sans-serif;
+  font-size: xx-large;
+  text-decoration: none;
   margin: 5px;
   color: white;
+}
+
+.app-name:hover {
+  color: gray;
 }
 
 .header input {
@@ -27,20 +33,6 @@
 
 .feeds-dropdown-menu {
   margin-top: 10px;
-}
-
-.feeds-dropdown-content {
-  display: none;
-}
-
-.feeds-dropdown-content a {
-  border: 1px solid black;
-  background: gray;
-}
-
-.show {
-  display: flex;
-  flex-direction: column;
 }
 
 @media only screen and (min-width: 992px) {

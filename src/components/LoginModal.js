@@ -1,8 +1,7 @@
-import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Button, Card } from 'reactstrap';
 
 import { FormSwitcher, UserProfile } from '.';
-import { useLazyGetTokenOwnerQuery } from '../slices/ribbitApi';
 
 import './LoginModal.css';
 
@@ -14,12 +13,17 @@ function LoginModal(props) {
     props.toggle();
   }
 
+  let redirect = e => {
+    window.location = 'http://localhost:3000/my-account';
+    props.toggle();
+  }
+
   return (
-    <div className="login-modal">
+    <div className='login-modal'>
       <Card>
         <Button onClick={props.toggle}>Close X</Button>
         {showFormSwitcher ? <FormSwitcher toggle={props.toggle}/> : null}
-        {!showFormSwitcher ? <UserProfile/> : null}
+        {!showFormSwitcher ? <Link to='/my-account' onClick={redirect}>My Account</Link> : null}
         {!showFormSwitcher ? <Button onClick={signOut}>Sign Out</Button> : null}
       </Card>
     </div>

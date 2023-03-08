@@ -31,9 +31,19 @@ const ribbitApi = createApi({
         url: 'ponds'
       })
     }),
+    getPondByName: builder.query({
+      query: name => ({
+        url: `ponds/${name}`
+      })
+    }),
     getPosts: builder.query({
       query: () => ({
         url: 'posts'
+      })
+    }),
+    getPostsByPondName: builder.query({
+      query: name => ({
+        url: `ponds/${name}/posts`
       })
     })
   })
@@ -41,4 +51,12 @@ const ribbitApi = createApi({
 
 export default ribbitApi;
 
-export const { useLoginMutation, useRegisterMutation, useLazyGetTokenOwnerQuery, useLazyGetPondsQuery, useLazyGetPostsQuery } = ribbitApi;
+export const {
+  useLoginMutation,
+  useRegisterMutation,
+  useLazyGetTokenOwnerQuery,
+  useLazyGetPondsQuery,
+  useLazyGetPondByNameQuery,
+  useLazyGetPostsQuery,
+  useLazyGetPostsByPondNameQuery
+} = ribbitApi;

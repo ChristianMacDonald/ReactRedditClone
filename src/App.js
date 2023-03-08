@@ -1,9 +1,20 @@
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+
 import './App.css';
-import { Home } from './pages';
+import { Header, SideBar } from './components';
+import { Home, MyAccount, Pond } from './pages';
 
 function App() {
   return (
-    <Home/>
+    <Router>
+      <Header/>
+      <SideBar/>
+      <Routes path='/'>
+        <Route index element={<Home/>}/>
+        <Route path='my-account' element={<MyAccount/>}/>
+        <Route path='p/:name' element={<Pond/>}/>
+      </Routes>
+    </Router>
   );
 }
 
