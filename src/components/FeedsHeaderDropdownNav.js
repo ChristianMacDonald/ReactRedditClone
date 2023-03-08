@@ -12,14 +12,10 @@ function FeedsHeaderDropdownNav(props) {
     triggerGetPonds();
   }, []);
 
-  let handleClick = () => {
-    props.toggle();
-  }
-
   return (
     <nav className='feeds-header-dropdown-nav'>
       {getPondsState.isLoading ? <Spinner>Loading...</Spinner> : null}
-      {getPondsState.isSuccess ? getPondsState.data.map((pond, i) => <Link to={`p/${pond.name}`} key={i} onClick={handleClick}>p/{pond.name}</Link>) : null}
+      {getPondsState.isSuccess ? getPondsState.data.map((pond, i) => <Link className='link' to={`p/${pond.name}`} key={i} onClick={props.toggle}>p/{pond.name}</Link>) : null}
     </nav>
   );
 }

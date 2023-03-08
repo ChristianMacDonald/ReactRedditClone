@@ -30,3 +30,8 @@
     width: 60%;
   }
 }
+
+.login-modal .card .btn {
+  width: 50%;
+  margin: 10px auto;
+}

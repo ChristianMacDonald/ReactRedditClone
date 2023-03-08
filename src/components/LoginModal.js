@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Button, Card } from 'reactstrap';
 
-import { FormSwitcher, UserProfile } from '.';
+import { FormSwitcher } from '.';
 
 import './LoginModal.css';
 
@@ -10,7 +10,7 @@ function LoginModal(props) {
 
   let signOut = () => {
     localStorage.removeItem('token');
-    props.toggle();
+    window.location.reload();
   }
 
   let redirect = e => {
@@ -21,7 +21,7 @@ function LoginModal(props) {
   return (
     <div className='login-modal'>
       <Card>
-        <Button onClick={props.toggle}>Close X</Button>
+        <Button color="danger" onClick={props.toggle}>Close X</Button>
         {showFormSwitcher ? <FormSwitcher toggle={props.toggle}/> : null}
         {!showFormSwitcher ? <Link to='/my-account' onClick={redirect}>My Account</Link> : null}
         {!showFormSwitcher ? <Button onClick={signOut}>Sign Out</Button> : null}

@@ -15,8 +15,6 @@ function PopularPosts(props) {
     triggerGetPostsQuery();
   }, []);
 
-  console.log(getPostsState);
-
   return (
     <section className="popular-posts">
       <h2>Popular Posts:</h2>

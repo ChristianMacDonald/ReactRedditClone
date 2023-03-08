@@ -1,3 +1,4 @@
+import CreateNewPostForm from './CreateNewPostForm';
 import FeedsHeaderDropdownNav from './FeedsHeaderDropdownNav';
 import FeedsSideBarNav from './FeedsSideBarNav';
 import FormSwitcher from './FormSwitcher';
@@ -15,6 +16,7 @@ import TrendingToday from './TrendingToday';
 import UserProfile from './UserProfile';
 
 export {
+  CreateNewPostForm,
   FeedsHeaderDropdownNav,
   FeedsSideBarNav,
   FormSwitcher,

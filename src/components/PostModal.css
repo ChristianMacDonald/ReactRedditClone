@@ -17,13 +17,19 @@
 
 @media only screen and (min-width: 600px) {
   .post-modal {
-    width: 75%;
+    width: 85%;
   }
 }
  
 @media only screen and (min-width: 768px) {
   .post-modal {
-    width: 50%;
+    width: 75%;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .post-modal {
+    width: 55%;
   }
 }
 
@@ -34,12 +40,13 @@
   border-radius: 5px;
   height: 90%;
   margin: 5% 0;
+  overflow-y: auto;
 }
 
-.post-modal .post header {
+.post header {
   display: flex;
-  justify-content: space-evenly;
-  align-items: center;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
 .close-post-modal-button {

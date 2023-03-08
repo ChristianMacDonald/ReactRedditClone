@@ -45,6 +45,16 @@ const ribbitApi = createApi({
       query: name => ({
         url: `ponds/${name}/posts`
       })
+    }),
+    createPost: builder.mutation({
+      query: options => ({
+        url: `ponds/${options.pond_name}/posts`,
+        method: 'POST',
+        body: { title: options.title, content: options.content},
+        headers: {
+          token: localStorage.getItem('token')
+        }
+      })
     })
   })
 });
@@ -58,5 +68,6 @@ export const {
   useLazyGetPondsQuery,
   useLazyGetPondByNameQuery,
   useLazyGetPostsQuery,
-  useLazyGetPostsByPondNameQuery
+  useLazyGetPostsByPondNameQuery,
+  useCreatePostMutation
 } = ribbitApi;

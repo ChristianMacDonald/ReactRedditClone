@@ -1,10 +1,12 @@
-.post .card:hover {
-  background-color: #D97;
-}
-
 .post .card {
   margin-bottom: 10px;
   padding: 10px;
+  overflow-y: auto;
+  min-height: fit-content;
+}
+
+.post .card:hover {
+  background-color: #D97;
 }
 
 .post:last-child {
@@ -20,4 +22,19 @@
 
 .post .card h3 {
   width: 100%;
+}
+
+.post-modal .post {
+  background-color: white;
+  width: 85%;
+  padding: 20px;
+  border-radius: 5px;
+  height: 90%;
+  margin: 5% 0;
+}
+
+.post header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
 }

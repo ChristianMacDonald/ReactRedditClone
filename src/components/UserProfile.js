@@ -9,8 +9,6 @@ function UserProfile(props) {
     triggerGetTokenOwner(localStorage.getItem('token'));
   }, []);
 
-  console.log(tokenOwnerState);
-
   return (
     <article>
       {tokenOwnerState.isLoading ? <Spinner>Loading...</Spinner> : null}

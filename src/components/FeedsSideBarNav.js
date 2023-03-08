@@ -12,8 +12,6 @@ function FeedsSideBarNav(props) {
   useEffect(() => {
     triggerGetPonds();
   }, []);
-  
-  console.log(getPondsState);
 
   return (
     <nav className="feeds-side-bar-nav">

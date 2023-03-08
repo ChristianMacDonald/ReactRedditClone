@@ -3,8 +3,6 @@ import { Form, FormGroup, Input, Label } from 'reactstrap';
 
 import { useRegisterMutation } from '../slices/ribbitApi';
 
-import './RegisterForm.css'
-
 function RegisterForm(props) {
   let [username, setUsername] = useState('');
   let [password, setPassword] = useState('');
@@ -25,8 +23,6 @@ function RegisterForm(props) {
   }
 
   useEffect(() => {
-    console.log(mutationState);
-    
     if (mutationState.status === 'fulfilled') {
       localStorage.setItem('token', mutationState.data.token);
       props.toggle();
