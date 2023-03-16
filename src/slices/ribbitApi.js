@@ -2,7 +2,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 const ribbitApi = createApi({
   reducerPath: 'ribbitApi',
-  baseQuery: fetchBaseQuery({ baseUrl: 'http://10.0.0.105:4000/api/' }),
+  baseQuery: fetchBaseQuery({ baseUrl: 'https://ribbit-web-api.herokuapp.com/api/' }),
   endpoints: builder => ({
     login: builder.mutation({
       query: user => ({
