@@ -2,7 +2,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 const ribbitApi = createApi({
   reducerPath: 'ribbitApi',
-  baseQuery: fetchBaseQuery({ baseUrl: 'http://10.0.0.105:4000/api/' }),
+  baseQuery: fetchBaseQuery({ baseUrl: 'https://ribbit-web-api.herokuapp.com/api/' }),
   endpoints: builder => ({
     login: builder.mutation({
       query: user => ({
@@ -31,9 +31,29 @@ const ribbitApi = createApi({
         url: 'ponds'
       })
     }),
+    getPondByName: builder.query({
+      query: name => ({
+        url: `ponds/${name}`
+      })
+    }),
     getPosts: builder.query({
       query: () => ({
         url: 'posts'
+      })
+    }),
+    getPostsByPondName: builder.query({
+      query: name => ({
+        url: `ponds/${name}/posts`
+      })
+    }),
+    createPost: builder.mutation({
+      query: options => ({
+        url: `ponds/${options.pond_name}/posts`,
+        method: 'POST',
+        body: { title: options.title, content: options.content},
+        headers: {
+          token: localStorage.getItem('token')
+        }
       })
     })
   })
@@ -41,4 +61,13 @@ const ribbitApi = createApi({
 
 export default ribbitApi;
 
-export const { useLoginMutation, useRegisterMutation, useLazyGetTokenOwnerQuery, useLazyGetPondsQuery, useLazyGetPostsQuery } = ribbitApi;
+export const {
+  useLoginMutation,
+  useRegisterMutation,
+  useLazyGetTokenOwnerQuery,
+  useLazyGetPondsQuery,
+  useLazyGetPondByNameQuery,
+  useLazyGetPostsQuery,
+  useLazyGetPostsByPondNameQuery,
+  useCreatePostMutation
+} = ribbitApi;

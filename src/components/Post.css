@@ -1,10 +1,12 @@
-.post .card:hover {
-  background-color: #D97;
-}
-
 .post .card {
   margin-bottom: 10px;
   padding: 10px;
+  overflow-y: auto;
+  min-height: fit-content;
+}
+
+.post .card:hover {
+  background-color: #D97;
 }
 
 .post:last-child {

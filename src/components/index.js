@@ -1,9 +1,10 @@
+import CreateNewPostForm from './CreateNewPostForm';
+import FeedsHeaderDropdownNav from './FeedsHeaderDropdownNav';
 import FeedsSideBarNav from './FeedsSideBarNav';
 import FormSwitcher from './FormSwitcher';
 import Header from './Header';
 import LoginForm from './LoginForm';
 import LoginModal from './LoginModal';
-import Main from './Main';
 import PopularPonds from './PopularPonds';
 import PopularPosts from './PopularPosts';
 import Post from './Post';
@@ -15,12 +16,13 @@ import TrendingToday from './TrendingToday';
 import UserProfile from './UserProfile';
 
 export {
+  CreateNewPostForm,
+  FeedsHeaderDropdownNav,
   FeedsSideBarNav,
   FormSwitcher,
   Header,
   LoginForm,
   LoginModal,
-  Main,
   PopularPonds,
   PopularPosts,
   Post,

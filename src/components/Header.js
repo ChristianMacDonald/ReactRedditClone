@@ -1,39 +1,34 @@
 import { useState } from "react";
 import classNames from "classnames";
 
-import { LoginModal } from '.';
+import { FeedsHeaderDropdownNav, LoginModal } from '.';
 
 import "./Header.css";
+import { Link } from "react-router-dom";
 
 function Header(props) {
-  let [showFeedsDropdown, setShowFeedsDropdown] = useState(false);
+  let [showFeedsHeaderDropdownNav, setShowFeedsHeaderDropdownNav] = useState(false);
 
-  let toggleFeedsDropdown = () => {
-    setShowFeedsDropdown(!showFeedsDropdown);
+  let toggleFeedsHeaderDropdownNav = () => {
+    setShowFeedsHeaderDropdownNav(!showFeedsHeaderDropdownNav);
   };
 
   let [showLoginModal, setShowLoginModal] = useState(false);
 
-  let toggle = () => {
+  let toggleLoginModal = () => {
     setShowLoginModal(!showLoginModal);
   }
 
   return (
     <header className="header">
-      <h1 className="app-name">Ribbit</h1>
+      <Link to="" className="app-name">Ribbit</Link>
       <div className="feeds-dropdown-menu">
-        <button onClick={toggleFeedsDropdown}>Feeds</button>
-        <nav className={classNames("feeds-dropdown-content", { "show": showFeedsDropdown })}>
-          <a>Main</a>
-          <a>Main</a>
-          <a>Main</a>
-          <a>Main</a>
-          <a>Main</a>
-        </nav>
+        <button onClick={toggleFeedsHeaderDropdownNav}>Feeds</button>
+        {showFeedsHeaderDropdownNav ? <FeedsHeaderDropdownNav toggle={toggleFeedsHeaderDropdownNav}/> : null}
       </div>
       <input type="text" placeholder="Search..."/>
-      <button className="login-button" onClick={toggle}>Login</button>
-      {showLoginModal ? <LoginModal toggle={toggle}/> : null}
+      <button className="login-button" onClick={toggleLoginModal}>Login</button>
+      {showLoginModal ? <LoginModal toggle={toggleLoginModal}/> : null}
     </header>
   );
 }

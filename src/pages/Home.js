@@ -1,12 +1,16 @@
-import { Header, Main, SideBar } from '../components';
+import { TrendingToday, PopularPonds, PopularPosts } from '../components';
+
+import './Home.css';
 
 function Home() {
   return (
-    <div id="home-page">
-      <Header/>
-      <SideBar/>
-      <Main/>
-    </div>
+    <main className='home-page'>
+      <TrendingToday/>
+      <section className='popular'>
+        <PopularPosts/>
+        <PopularPonds/>
+      </section>
+    </main>
   );
 }
 

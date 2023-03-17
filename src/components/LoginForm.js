@@ -3,8 +3,6 @@ import { Form, FormGroup, Input, Label } from 'reactstrap';
 
 import { useLoginMutation } from '../slices/ribbitApi';
 
-import './LoginForm.css'
-
 function LoginForm(props) {
   let [username, setUsername] = useState('');
   let [password, setPassword] = useState('');
@@ -25,11 +23,9 @@ function LoginForm(props) {
   let [trigger, mutationState] = useLoginMutation();
 
   useEffect(() => {
-    console.log(mutationState);
-
     if (mutationState.status === 'fulfilled') {
       localStorage.setItem('token', mutationState.data.token);
-      props.toggle();
+      window.location.reload();
     }
   }, [mutationState.status])
 

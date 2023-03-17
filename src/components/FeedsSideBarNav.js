@@ -1,9 +1,26 @@
+import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { Spinner } from 'reactstrap';
+
+import { useLazyGetPondsQuery } from '../slices/ribbitApi';
+
 import './FeedsSideBarNav.css';
 
 function FeedsSideBarNav(props) {
+  let [triggerGetPonds, getPondsState] = useLazyGetPondsQuery();
+
+  useEffect(() => {
+    triggerGetPonds();
+  }, []);
+
   return (
     <nav className="feeds-side-bar-nav">
-      {props.options.map((element, i) => <a href="" key={i}>{element}</a>)}
+      {getPondsState.isLoading ? <Spinner>Loading...</Spinner> : null}
+      {
+        getPondsState.isSuccess ? (
+          getPondsState.data.map((pond, i) => <Link to={`p/${pond.name}`} key={i}>p/{pond.name}</Link>)
+        ) : null
+      }
     </nav>
   );
 }

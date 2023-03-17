@@ -1,0 +1,9 @@
+.feeds-header-dropdown-nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.feeds-header-dropdown-nav a {
+  border: 1px solid black;
+  background: white;
+}
