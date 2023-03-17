@@ -1,27 +1,18 @@
 import { useEffect } from "react";
-import { Spinner } from "reactstrap";
+import { UserProfile } from "../components";
 
-import { useLazyGetTokenOwnerQuery } from "../slices/ribbitApi";
-
-function User() {
-  let [triggerGetTokenOwner, tokenOwnerState] = useLazyGetTokenOwnerQuery();
-  
+function MyAccount() {
   useEffect(() => {
-    let token = localStorage.getItem('token');
-
-    if (token) {
-      triggerGetTokenOwner(token);
-    } else {
+    if (localStorage.getItem('token') === null) {
       window.location.replace('http://localhost:3000');
     }
   }, []);
 
   return (
-    <main className="user-page">
-      {tokenOwnerState.isLoading ? <Spinner>Loading...</Spinner> : null}
-      {tokenOwnerState.isSuccess ? <h2>Username: {tokenOwnerState.data.username}</h2> : null}
+    <main className="my-account-page">
+      <UserProfile/>
     </main>
   );
 }
 
-export default User;
+export default MyAccount;

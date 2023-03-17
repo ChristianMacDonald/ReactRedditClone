@@ -1,0 +1,19 @@
+.my-account-page .card {
+  padding: 10px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media only screen and (min-width: 992px) {
+  .my-account-page .card {
+    margin: 0;
+    width: 75%;
+  }
+}
+
+.my-account-page .card h2 {
+  max-width: 100%;
+}
